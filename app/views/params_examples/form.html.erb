@@ -1,0 +1,10 @@
+<h1>Rails Form!</h1>
+<%= form_tag '/form_result_url', method: :post do %>
+  <div>
+    <%= label_tag :form_message, 'Enter message: ' %>
+    <%= text_field_tag :form_message %>
+  </div>
+  <div>
+    <%= submit_tag 'Submit message!' %>
+  </div>
+<% end %>

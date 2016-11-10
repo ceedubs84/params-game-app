@@ -10,6 +10,15 @@ class ParamsExamplesController < ApplicationController
     render 'url_segment_params.html.erb'
   end
 
+  def form_params_method
+    render 'form.html.erb'
+  end
+
+  def form_result_method
+    @value = params["form_message"]
+    render 'form_result.html.erb'
+  end
+
   def whatever_name_method
     @name = params["query_name"]
     @message = ""
@@ -21,7 +30,7 @@ class ParamsExamplesController < ApplicationController
 
   def guessing_game_method
     winning_number = 32
-    @guess = params["user_variable"].to_i
+    @guess = params["the_users_guess"].to_i
     if @guess > winning_number
       @message = "Pick lower!"
     elsif @guess < winning_number
